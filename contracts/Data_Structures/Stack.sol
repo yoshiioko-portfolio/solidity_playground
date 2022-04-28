@@ -41,13 +41,13 @@ contract Stack {
     }
 
     /// @notice Checks if the Stack is currently empty
-    /// @return bool if empty, False if not empty
+    /// @return bool True if empty, False if not empty
     function isEmpty() public view returns (bool) {
         return stack.length == 0 ? true : false;
     }
 
     /// @notice Implements the Peek operation of a Stack
-    /// @return uint top value of the Stack but does not remove it from the structure
+    /// @return uint Top value of the Stack but does not remove it from the structure
     function peek() public view stackNotEmpty returns (uint) {
         return stack[stack.length - 1];
     }
