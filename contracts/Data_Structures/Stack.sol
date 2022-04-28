@@ -6,12 +6,12 @@ contract Stack {
     uint[] stack;
     address owner;
     
-    // @notice Constructor sets the user who creates the contract as the owner 
+    /// @notice Constructor sets the user who creates the contract as the owner 
     constructor() {
         owner = msg.sender;
     }
 
-    // @notice Modifier used to prevent non-owners from executing certain functions 
+    /// @notice Modifier used to prevent non-owners from executing certain functions 
     modifier onlyOwner() {
         require(msg.sender == owner, "Only owner can call this function.");
         _;
