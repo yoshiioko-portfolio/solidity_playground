@@ -17,6 +17,7 @@ contract MyContract is Ownable {
     }
 
     function decrement() public onlyOwner {
+        require(count > 0, "Unable to decrement Zero value!");
         count = count - 1;
     }
 }
