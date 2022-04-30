@@ -31,6 +31,13 @@ contract MyContractV2 is AccessControl {
     }
 
     /**
+     * @dev Resets the counter value to Zero.
+     */
+     function resetCount() public onlyRole(DEFAULT_ADMIN_ROLE) {
+         count = 0;
+     }
+
+    /**
      * @dev Increments the counter value.
      * Can only be called by user with INCREMENTER_ROLE
      */
