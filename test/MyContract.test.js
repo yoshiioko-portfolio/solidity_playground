@@ -37,6 +37,13 @@ contract("MyContract", function (accounts) {
     expect(curr_count.toString()).to.equal("0");
   });
 
+  it("Owner try to decrement 0 value", async function () {
+    await expectRevert(
+      this.contract.decrement({ from: owner }),
+      "Unable to decrement Zero value!"
+    );
+  });
+
   it("Call increment with non-Owner account", async function () {
     await expectRevert(
       this.contract.increment({ from: other }),
